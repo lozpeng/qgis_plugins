@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/qgsml">
+        <file>images/image_search-24px.svg</file>
+        <file>images/3d_rotation-24px.svg</file>
+        <file>images/build-24px.svg</file>
+        <file>images/construction-24px.svg</file>
+        <file>images/fingerprint-24px.svg</file>
+        <file>images/format_shapes-24px.svg</file>
+        <file>images/menu_book-24px.svg</file>
+        <file>images/my_location-24px.svg</file>
+        <file>images/navigation-24px.svg</file>
+        <file>images/photo_camera-24px.svg</file>
+        <file>images/satellite-24px.svg</file>
+        <file>images/schema-24px.svg</file>
+        <file>images/streetview-24px.svg</file>
+        <file>images/switch_video-24px.svg</file>
+        <file>images/tablet_android-24px.svg</file>
+        <file>images/down.png</file>
+        <file>images/left.png</file>
+        <file>images/right.png</file>
+        <file>images/split_h.png</file>
+        <file>images/split_v.png</file>
+        <file>images/up.png</file>
+        <file>images/icon.png</file>
+        <file>images/magnifier.jpg</file>
+        <file>images/pan.png</file>
+        <file>images/box.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{3009121b-632e-46fe-8624-d7ca7fcb82d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="gui">
+      <UniqueIdentifier>{9c0aeeb4-2a61-43d1-8f39-b310c96125e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extools">
+      <UniqueIdentifier>{506a7999-2559-4778-9472-bef5753519a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extools\swipe">
+      <UniqueIdentifier>{a205a5de-7bbe-40d3-a8fa-d47c249bc70c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\qgs_ml_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\QManualRestEvent.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\extools\vQgsLayerSwiperTool.cpp">
+      <Filter>extools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\extools\vqgsmapswiper.cpp">
+      <Filter>extools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\extools\mapswip\vSwipMapCanvasItem.cpp">
+      <Filter>extools\swipe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\extools\vQgsXRayMagnifyTool.cpp">
+      <Filter>extools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\extools\mapswip\vXSwipMapCanvasItem.cpp">
+      <Filter>extools\swipe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\base\QgsBaseActionFilter.h">
+      <Filter>base</Filter>
+    </QtMoc>
+    <QtMoc Include="src\qgs_ml_plugin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\extools\vqgsmapswiper.h">
+      <Filter>extools</Filter>
+    </QtMoc>
+    <QtMoc Include="src\extools\vQgsXRayMagnifyTool.h">
+      <Filter>extools</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resources\qgs_ml_plugin.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\base\QManualRestEvent.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\extools\vQgsLayerSwiperTool.h">
+      <Filter>extools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\extools\mapswip\vSwipMapCanvasItem.h">
+      <Filter>extools\swipe</Filter>
+    </ClInclude>
+    <ClInclude Include="src\extools\mapswip\vXSwipMapCanvasItem.h">
+      <Filter>extools\swipe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\extools\readme.txt">
+      <Filter>extools</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
