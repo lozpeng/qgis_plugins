@@ -1,10 +1,6 @@
-地理数据服务化处理插件，和工具。包括Qgis插件和独立运行的exe程序
-
-使用C++17 进行代码编译是可能会发生
-byte重定义错误，则添加宏定义
-_HAS_STD_BYTE=0
-
-由于xfileio.h中的定义的DWORD和UINT、UNLONG等与系统自定义的重复，因此修改了定义的类型的名称
+if you try to comile this code in vs2019 then:
+1.maybe it will shows byte define error that C++17 has already defined byte so we need and _HAS_STD_BYTE=0 definition
+2.you should add UserEnv.props to your VS2019 project and change QGIS and OSGW_PATH to your path
 
 
 
