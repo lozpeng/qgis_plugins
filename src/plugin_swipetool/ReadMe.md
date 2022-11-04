@@ -8,6 +8,6 @@
 
 
 ### Video <br/>
-<video src="https://www.youtube.com/watch?v=kja0eb1LWQ0" controls="controls" width="500" height="300"> sorry your browser does not support html5 video
+<video src="https://youtu.be/kja0eb1LWQ0" controls="controls" width="500" height="300"> sorry your browser does not support html5 video
 </video>
 
