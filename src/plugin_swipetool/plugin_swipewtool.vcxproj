@@ -42,7 +42,7 @@
     <ProjectGuid>{5708E979-CF54-45DE-95FC-7320E094BA4D}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">10.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -108,7 +108,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(QGIS_LIBS);gdal_i.lib;opencv_world451d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(QGIS_LIBS);gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">

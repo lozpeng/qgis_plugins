@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugRel|x64">
+      <Configuration>DebugRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\action\QgsLayerQueryAction.cpp" />
+    <ClCompile Include="src\base\QgsBaseActionFilter.cpp" />
+    <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
+    <ClCompile Include="src\editor\qgsExplodeMultiPartsAction.cpp" />
+    <ClCompile Include="src\editor\split\qgsVectorLayerSelectBaseDialog.cpp" />
+    <ClCompile Include="src\editor\split\qgsVectorSplitAction.cpp" />
+    <ClCompile Include="src\geojson\CoordinatesCompressor.cpp" />
+    <ClCompile Include="src\qgs_easysearch_plugin.cpp" />
+    <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp" />
+    <ClCompile Include="src\ui\qgsLayerQueryDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\base\QgsBaseActionFilter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resources\plugin_easyquery.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\qgs_easysearch_plugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\action\QgsLayerQueryAction.h" />
+    <QtMoc Include="src\editor\qgsExplodeMultiPartsAction.h" />
+    <QtMoc Include="src\editor\split\qgsVectorSplitAction.h" />
+    <QtMoc Include="src\editor\split\qgsVectorLayerSelectBaseDialog.h" />
+    <QtMoc Include="src\base\qgsribbonpluginuibase.h" />
+    <ClInclude Include="src\geojson\CoordinatesCompressor.h" />
+    <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h" />
+    <QtMoc Include="src\ui\qgsLayerQueryDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui" />
+    <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui" />
+    <QtUic Include="src\ui\qgsLayerQueryBaseDialog.ui" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>Qt5.15.2G</QtInstall>
+    <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="QtSettings">
+    <QtInstall>Qt5.15.2G</QtInstall>
+    <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+    <Import Project="..\UserEnv.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+    <Import Project="..\UserEnv.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutDir>$(QGIS)\plugins\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">
+    <OutDir>$(QGIS)/plugins/</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(OSGW_PATH)/include;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(QGIS_LIBS);gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(OPENCV)/include;$(OSGW_PATH)/include;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(QGIS_LIBS);gdal_i.lib;QtitanBase1.lib;QtitanRibbon5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WITH_BINDINGS;SIP_VERSION=0x04130d;PROJ_VERSION_MAJOR=5;SPATIALITE_VERSION_GE_4_0_0;SPATIALITE_VERSION_G_4_1_1;SPATIALITE_HAS_INIT_EX;NDEBUG;WITH_QTITAN;QTN_NAMESPACE;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);CUSTOMWIDGETS_EXPORT=__declspec(dllimport);SERVER_EXPORT=__declspec(dllimport);QTITAN_EXPORT=__declspec(dllimport);WITH_QTWEBKIT;QT_DISABLE_DEPRECATED_BEFORE=0x050800;QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;QGIS_DISABLE_DEPRECATED;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WITH_BINDINGS;SIP_VERSION=0x04130d;PROJ_VERSION_MAJOR=5;SPATIALITE_VERSION_GE_4_0_0;SPATIALITE_VERSION_G_4_1_1;SPATIALITE_HAS_INIT_EX;NDEBUG;WITH_QTITAN;QTN_NAMESPACE;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);CUSTOMWIDGETS_EXPORT=__declspec(dllimport);SERVER_EXPORT=__declspec(dllimport);QTITAN_EXPORT=__declspec(dllimport);WITH_QTWEBKIT;QT_DISABLE_DEPRECATED_BEFORE=0x050800;QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;QGIS_DISABLE_DEPRECATED;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

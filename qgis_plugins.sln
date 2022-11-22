@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plugin_swipewtool", "src\plugin_swipetool\plugin_swipewtool.vcxproj", "{5708E979-CF54-45DE-95FC-7320E094BA4D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plugin_easyquery", "src\plugin_easyquery\plugin_easyquery.vcxproj", "{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugRel|x64 = DebugRel|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5708E979-CF54-45DE-95FC-7320E094BA4D}.DebugRel|x64.ActiveCfg = DebugRel|x64
+		{5708E979-CF54-45DE-95FC-7320E094BA4D}.DebugRel|x64.Build.0 = DebugRel|x64
+		{5708E979-CF54-45DE-95FC-7320E094BA4D}.Release|x64.ActiveCfg = Release|x64
+		{5708E979-CF54-45DE-95FC-7320E094BA4D}.Release|x64.Build.0 = Release|x64
+		{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}.DebugRel|x64.ActiveCfg = DebugRel|x64
+		{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}.DebugRel|x64.Build.0 = DebugRel|x64
+		{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}.Release|x64.ActiveCfg = Release|x64
+		{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C19360EA-7897-4B3B-90F5-3F04FBF4FAF7}
+	EndGlobalSection
+EndGlobal

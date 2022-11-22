@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="gui">
+      <UniqueIdentifier>{9c0aeeb4-2a61-43d1-8f39-b310c96125e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{677737a0-f2a3-4330-823d-10aa9e3867fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b779beec-05bf-46ca-a33e-6ba6fbdbac46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="action">
+      <UniqueIdentifier>{1eac8264-98fa-4300-8857-bf99341650fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geojson">
+      <UniqueIdentifier>{de56dc28-8a01-418a-be50-0731d2ef4863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor">
+      <UniqueIdentifier>{57a8a09d-a856-4609-b33e-e73ea3bb2c01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\split">
+      <UniqueIdentifier>{90428c39-b52f-4af7-a227-6cf9413e241d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\qgs_easysearch_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\action\QgsLayerQueryAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\qgsLayerQueryDialog.cpp">
+      <Filter>gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp">
+      <Filter>gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\geojson\CoordinatesCompressor.cpp">
+      <Filter>geojson</Filter>
+    </ClCompile>
+    <ClCompile Include="src\editor\qgsExplodeMultiPartsAction.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\editor\split\qgsVectorSplitAction.cpp">
+      <Filter>editor\split</Filter>
+    </ClCompile>
+    <ClCompile Include="src\editor\split\qgsVectorLayerSelectBaseDialog.cpp">
+      <Filter>editor\split</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\qgsribbonpluginuibase.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\base\QgsBaseActionFilter.h">
+      <Filter>base</Filter>
+    </QtMoc>
+    <QtMoc Include="src\qgs_easysearch_plugin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\qgsLayerQueryDialog.h">
+      <Filter>gui</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h">
+      <Filter>gui</Filter>
+    </QtMoc>
+    <QtMoc Include="src\editor\qgsExplodeMultiPartsAction.h">
+      <Filter>editor</Filter>
+    </QtMoc>
+    <QtMoc Include="src\editor\split\qgsVectorSplitAction.h">
+      <Filter>editor\split</Filter>
+    </QtMoc>
+    <QtMoc Include="src\editor\split\qgsVectorLayerSelectBaseDialog.h">
+      <Filter>editor\split</Filter>
+    </QtMoc>
+    <QtMoc Include="src\base\qgsribbonpluginuibase.h">
+      <Filter>base</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resources\plugin_easyquery.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\action\QgsLayerQueryAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geojson\CoordinatesCompressor.h">
+      <Filter>geojson</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\ui\qgsLayerQueryBaseDialog.ui">
+      <Filter>gui</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui">
+      <Filter>gui</Filter>
+    </QtUic>
+    <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui">
+      <Filter>editor\split</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

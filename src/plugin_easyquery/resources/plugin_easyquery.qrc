@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/easy_query">
+        <file>images/tablet_android-24px.svg</file>
+        <file>images/switch_video-24px.svg</file>
+        <file>images/streetview-24px.svg</file>
+        <file>images/schema-24px.svg</file>
+        <file>images/satellite-24px.svg</file>
+        <file>images/photo_camera-24px.svg</file>
+        <file>images/navigation-24px.svg</file>
+        <file>images/my_location-24px.svg</file>
+        <file>images/menu_book-24px.svg</file>
+        <file>images/image_search-24px.svg</file>
+        <file>images/format_shapes-24px.svg</file>
+        <file>images/fingerprint-24px.svg</file>
+        <file>images/construction-24px.svg</file>
+        <file>images/build-24px.svg</file>
+        <file>images/3d_rotation-24px.svg</file>
+    </qresource>
+</RCC>
