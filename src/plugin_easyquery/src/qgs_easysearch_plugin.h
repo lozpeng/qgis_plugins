@@ -10,7 +10,7 @@
 #include "base/QgsBaseActionFilter.h"
 
 #include "action/QgsLayerQueryAction.h"
-
+#include "editor/split/qgsVectorSplitAction.h"
 class QAction;
 class QToolBar;
 class QgsMapLayer;

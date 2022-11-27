@@ -39,6 +39,9 @@
     <Filter Include="editor\split">
       <UniqueIdentifier>{90428c39-b52f-4af7-a227-6cf9413e241d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="editor\add">
+      <UniqueIdentifier>{416aa527-64d6-4eb6-8a9f-f4ebe6b8f301}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
@@ -71,6 +74,15 @@
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp">
       <Filter>base</Filter>
     </ClCompile>
+    <ClCompile Include="src\editor\qgsEasyEditorManager.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\editor\add\qgsCoordInputDialog.cpp">
+      <Filter>editor\add</Filter>
+    </ClCompile>
+    <ClCompile Include="src\editor\add\qgsGeometryAddTool.cpp">
+      <Filter>editor\add</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\base\QgsBaseActionFilter.h">
@@ -97,6 +109,15 @@
     <QtMoc Include="src\base\qgsribbonpluginuibase.h">
       <Filter>base</Filter>
     </QtMoc>
+    <QtMoc Include="src\editor\qgsEasyEditorManager.h">
+      <Filter>editor</Filter>
+    </QtMoc>
+    <QtMoc Include="src\editor\add\qgsCoordInputDialog.h">
+      <Filter>editor\add</Filter>
+    </QtMoc>
+    <QtMoc Include="src\editor\add\qgsGeometryAddTool.h">
+      <Filter>editor\add</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="resources\plugin_easyquery.qrc">
@@ -120,6 +141,9 @@
     </QtUic>
     <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui">
       <Filter>editor\split</Filter>
+    </QtUic>
+    <QtUic Include="src\editor\add\qgsCoordInputDialogBase.ui">
+      <Filter>editor\add</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

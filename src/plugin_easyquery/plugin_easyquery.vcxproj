@@ -14,6 +14,9 @@
     <ClCompile Include="src\action\QgsLayerQueryAction.cpp" />
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp" />
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
+    <ClCompile Include="src\editor\add\qgsCoordInputDialog.cpp" />
+    <ClCompile Include="src\editor\add\qgsGeometryAddTool.cpp" />
+    <ClCompile Include="src\editor\qgsEasyEditorManager.cpp" />
     <ClCompile Include="src\editor\qgsExplodeMultiPartsAction.cpp" />
     <ClCompile Include="src\editor\split\qgsVectorLayerSelectBaseDialog.cpp" />
     <ClCompile Include="src\editor\split\qgsVectorSplitAction.cpp" />
@@ -37,11 +40,15 @@
     <QtMoc Include="src\editor\split\qgsVectorSplitAction.h" />
     <QtMoc Include="src\editor\split\qgsVectorLayerSelectBaseDialog.h" />
     <QtMoc Include="src\base\qgsribbonpluginuibase.h" />
+    <QtMoc Include="src\editor\qgsEasyEditorManager.h" />
+    <QtMoc Include="src\editor\add\qgsCoordInputDialog.h" />
+    <QtMoc Include="src\editor\add\qgsGeometryAddTool.h" />
     <ClInclude Include="src\geojson\CoordinatesCompressor.h" />
     <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h" />
     <QtMoc Include="src\ui\qgsLayerQueryDialog.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="src\editor\add\qgsCoordInputDialogBase.ui" />
     <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui" />
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui" />
     <QtUic Include="src\ui\qgsLayerQueryBaseDialog.ui" />
@@ -73,7 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="QtSettings">
     <QtInstall>Qt5.15.2G</QtInstall>
-    <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
+    <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent;networkauth</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
