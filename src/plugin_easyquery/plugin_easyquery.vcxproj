@@ -22,8 +22,8 @@
     <ClCompile Include="src\editor\split\qgsVectorSplitAction.cpp" />
     <ClCompile Include="src\geojson\CoordinatesCompressor.cpp" />
     <ClCompile Include="src\qgs_easysearch_plugin.cpp" />
+    <ClCompile Include="src\ui\qgsEasyQueryWidget.cpp" />
     <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp" />
-    <ClCompile Include="src\ui\qgsLayerQueryDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\base\QgsBaseActionFilter.h" />
@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\action\QgsLayerQueryAction.h" />
+    <QtMoc Include="src\ui\qgsEasyQueryWidget.h" />
     <QtMoc Include="src\editor\qgsExplodeMultiPartsAction.h" />
     <QtMoc Include="src\editor\split\qgsVectorSplitAction.h" />
     <QtMoc Include="src\editor\split\qgsVectorLayerSelectBaseDialog.h" />
@@ -45,13 +46,12 @@
     <QtMoc Include="src\editor\add\qgsGeometryAddTool.h" />
     <ClInclude Include="src\geojson\CoordinatesCompressor.h" />
     <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h" />
-    <QtMoc Include="src\ui\qgsLayerQueryDialog.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\editor\add\qgsCoordInputDialogBase.ui" />
     <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui" />
+    <QtUic Include="src\ui\qgsEasyQueryWidget.ui" />
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui" />
-    <QtUic Include="src\ui\qgsLayerQueryBaseDialog.ui" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{97836D5B-C7BA-4AA6-9819-3E28EEA60FD8}</ProjectGuid>
@@ -107,7 +107,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(OSGW_PATH)/include;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -118,7 +118,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(OPENCV)/include;$(OSGW_PATH)/include;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>

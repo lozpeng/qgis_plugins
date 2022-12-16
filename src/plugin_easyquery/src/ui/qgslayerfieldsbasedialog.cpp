@@ -76,7 +76,7 @@ void qgsLayerFieldsBaseDialog::on_chkAllFields_stateChanged(int status)
 //! 确定按钮处理事件
 void qgsLayerFieldsBaseDialog::on_pbOk_click()
 {
-	this->hide();
+	this->accept();
 }
 /**
 * 更新当前图层
@@ -85,5 +85,4 @@ void qgsLayerFieldsBaseDialog::updateCurrentLayer(QgsVectorLayer* currentLayer) 
 	this->mCurrentLayer = currentLayer;
 	//！初始化字段列表
 	initFields(this->chkAllFields->isChecked());
-
 }

@@ -33,7 +33,8 @@ void qgsCoordInputDialog::keyPressEvent(QKeyEvent* e) {
 			this->accept();
 			mCoordInputed = true;
 			return;
-		}			
+		}
+		this->ui.coordY->setFocus();
 	}
 	if (e->key() == Qt::Key_Escape)
 		this->reject();

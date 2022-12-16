@@ -4,6 +4,8 @@
 #include <qgisinterface.h>
 
 #include "base/qgsribbonpluginuibase.h"
+
+#include "add/qgsGeometryAddTool.h"
 //!编辑工具管理类
 class qgsEasyEditorManager  : public QObject
 #ifdef WITH_QTITAN
@@ -17,4 +19,6 @@ public:
 	~qgsEasyEditorManager();
 	void loadUI();
 	void unLoad();
+private:
+	qgsGeometryAddTool* mGeometryAddTool;
 };

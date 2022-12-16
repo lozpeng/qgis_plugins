@@ -39,7 +39,6 @@ public:
 public slots:
 	//当当前图层发生变化时
 	void on_currentLayerChanged(QgsMapLayer* layer);
-
 private:
 	//! Pointer to the QGIS interface object
 	QgisInterface *mQGisIface;

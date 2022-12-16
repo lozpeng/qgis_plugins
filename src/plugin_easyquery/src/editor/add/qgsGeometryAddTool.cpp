@@ -50,7 +50,7 @@ void qgsGeometryAddTool::keyReleaseEvent(QKeyEvent* e)
 		notifyNotEditableLayer();
 		return;
 	}
-	if (e->key() == Qt::Key::Key_C)
+	if (e->key() == Qt::Key_C)
 		this->canvas()->setMapTool(this);
 }
 //键盘释放事件，当用户敲击键盘之后弹出的操作
@@ -90,11 +90,9 @@ void qgsGeometryAddTool::keyPressEvent(QKeyEvent* e)
 		}
 		return;
 	}
-	if (e->key() == Qt::Key::Key_C) //! 如果在编辑状态时按下C键时，开启地图漫游工具，漫游地图
+	if (e->key() == Qt::Key_C) //! 如果在编辑状态时按下C键时，开启地图漫游工具，漫游地图
 	{
-		//this->canvas()->setMapTool(new qgsMapPanTool()); //设置工具
-
-
+		QgisApp::instance()->actionPan()->trigger();
 	}
 }
 
@@ -890,7 +888,7 @@ void qgsGeometryEditUtils::editFeatureAttr(QgsVectorLayer* vlayer, QgsFeature* f
 	dialog->setAttribute(Qt::WA_DeleteOnClose);
 	dialog->show();
 	*/
-
+	
 	//以下代码可以实现编辑，实现要素的属性编辑，
 	//建议先将要素添加至图层中后再编辑
 	//SilenAttributeDialog sileAttrDlg(vlayer, feature, true);

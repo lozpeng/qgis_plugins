@@ -53,9 +53,6 @@
     <ClCompile Include="src\action\QgsLayerQueryAction.cpp">
       <Filter>action</Filter>
     </ClCompile>
-    <ClCompile Include="src\ui\qgsLayerQueryDialog.cpp">
-      <Filter>gui</Filter>
-    </ClCompile>
     <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp">
       <Filter>gui</Filter>
     </ClCompile>
@@ -83,6 +80,9 @@
     <ClCompile Include="src\editor\add\qgsGeometryAddTool.cpp">
       <Filter>editor\add</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\qgsEasyQueryWidget.cpp">
+      <Filter>gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\base\QgsBaseActionFilter.h">
@@ -90,9 +90,6 @@
     </QtMoc>
     <QtMoc Include="src\qgs_easysearch_plugin.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="src\ui\qgsLayerQueryDialog.h">
-      <Filter>gui</Filter>
     </QtMoc>
     <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h">
       <Filter>gui</Filter>
@@ -118,6 +115,9 @@
     <QtMoc Include="src\editor\add\qgsGeometryAddTool.h">
       <Filter>editor\add</Filter>
     </QtMoc>
+    <QtMoc Include="src\ui\qgsEasyQueryWidget.h">
+      <Filter>gui</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="resources\plugin_easyquery.qrc">
@@ -133,9 +133,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="src\ui\qgsLayerQueryBaseDialog.ui">
-      <Filter>gui</Filter>
-    </QtUic>
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui">
       <Filter>gui</Filter>
     </QtUic>
@@ -144,6 +141,9 @@
     </QtUic>
     <QtUic Include="src\editor\add\qgsCoordInputDialogBase.ui">
       <Filter>editor\add</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\qgsEasyQueryWidget.ui">
+      <Filter>gui</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

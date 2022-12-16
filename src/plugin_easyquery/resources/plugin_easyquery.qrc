@@ -15,5 +15,6 @@
         <file>images/construction-24px.svg</file>
         <file>images/build-24px.svg</file>
         <file>images/3d_rotation-24px.svg</file>
+        <file>images/filter-cog-outline.svg</file>
     </qresource>
 </RCC>
