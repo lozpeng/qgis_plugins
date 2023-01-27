@@ -69,10 +69,15 @@ int qgsLayerQueryAction::openInputDialog()
 	return 1;
 }
 
-///获取用户设置之后的选中的字段
+///获取用户设置之后的选中的字``段
 void qgsLayerQueryAction::getParametersFromDialog()
 {
 	if (!mFieldsSelectorDlg)return;
 	QStringList strList;
 	int result = mFieldsSelectorDlg->getSelectedFields(strList);
+}
+//!
+int qgsLayerQueryAction::compute()
+{
+	return -1;
 }

@@ -18,9 +18,6 @@
       <Extensions>ui</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
-    <Filter Include="gui">
-      <UniqueIdentifier>{9c0aeeb4-2a61-43d1-8f39-b310c96125e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="base">
       <UniqueIdentifier>{677737a0-f2a3-4330-823d-10aa9e3867fa}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     <Filter Include="editor\add">
       <UniqueIdentifier>{416aa527-64d6-4eb6-8a9f-f4ebe6b8f301}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{9c0aeeb4-2a61-43d1-8f39-b310c96125e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
@@ -54,7 +54,7 @@
       <Filter>action</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </ClCompile>
     <ClCompile Include="src\geojson\CoordinatesCompressor.cpp">
       <Filter>geojson</Filter>
@@ -81,7 +81,7 @@
       <Filter>editor\add</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\qgsEasyQueryWidget.cpp">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +92,7 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="src\ui\qgslayerfieldsbasedialog.h">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </QtMoc>
     <QtMoc Include="src\editor\qgsExplodeMultiPartsAction.h">
       <Filter>editor</Filter>
@@ -116,7 +116,7 @@
       <Filter>editor\add</Filter>
     </QtMoc>
     <QtMoc Include="src\ui\qgsEasyQueryWidget.h">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -134,7 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </QtUic>
     <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui">
       <Filter>editor\split</Filter>
@@ -143,7 +143,7 @@
       <Filter>editor\add</Filter>
     </QtUic>
     <QtUic Include="src\ui\qgsEasyQueryWidget.ui">
-      <Filter>gui</Filter>
+      <Filter>ui</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

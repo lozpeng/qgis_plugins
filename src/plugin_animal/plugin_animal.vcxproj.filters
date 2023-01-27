@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <QtRcc Include="resources\plugin_images.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{29e26a43-04c2-4040-afd1-67f7a0ba4487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="plugin">
+      <UniqueIdentifier>{d9469dee-317a-49f0-b5e2-4ddfb5215dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{30777e7b-1be2-4061-b8d3-122f8bee05b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="layer">
+      <UniqueIdentifier>{80188589-7937-4c8f-980f-a362a3f2eec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="layer\tilelayer">
+      <UniqueIdentifier>{e1df17d6-876c-4d69-984c-146b4b3f77be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="layer\tilelayer\utils">
+      <UniqueIdentifier>{5d82e03a-52bf-4c72-a24c-c173bd879c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\sampling">
+      <UniqueIdentifier>{3c2919fd-93d1-47e9-8673-39505abfd36c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{e6f76e65-ff63-470e-abe4-2661a4f54b75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\eval">
+      <UniqueIdentifier>{60e0326d-8879-4c0c-8911-47c6984683fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\base\qgsribbonpluginuibase.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plugin_exports.cpp" />
+    <ClCompile Include="src\qgs_plugin_imp.cpp">
+      <Filter>plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\qgsLayerContextMenu.cpp">
+      <Filter>layer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\qgsTiledCustomLayer.cpp">
+      <Filter>layer\tilelayer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\TileDB.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\HttpFun.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\ReadTileDb.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\SilenTileDb.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\tile.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\MultiTileThread.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer\tilelayer\Geometry.cpp">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\qgsAnimalPluginManager.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\sampling\qgsAnimalSamplGridAction.cpp">
+      <Filter>ui\sampling</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\sampling\qgsSamplingParamDialog.cpp">
+      <Filter>ui\sampling</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\qgsGeoUtils.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\qgsGridUtil.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\eval\qgsSamplingEvalAction.cpp">
+      <Filter>ui\eval</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\base\QgsBaseActionFilter.h">
+      <Filter>base</Filter>
+    </QtMoc>
+    <QtMoc Include="src\base\qgsribbonpluginuibase.h">
+      <Filter>base</Filter>
+    </QtMoc>
+    <QtMoc Include="src\qgs_plugin_imp.h">
+      <Filter>plugin</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\qgsTiledCustomLayer.h">
+      <Filter>layer\tilelayer</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\TileDB.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\HttpFun.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\ReadTileDb.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\SilenTileDb.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\layer\tilelayer\MultiTileThread.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\sampling\qgsAnimalSamplGridAction.h">
+      <Filter>ui\sampling</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\sampling\qgsSamplingParamDialog.h">
+      <Filter>ui\sampling</Filter>
+    </QtMoc>
+    <QtMoc Include="src\utils\qgsGeoUtils.h">
+      <Filter>utils</Filter>
+    </QtMoc>
+    <QtMoc Include="src\ui\eval\qgsSamplingEvalAction.h">
+      <Filter>ui\eval</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\layer\qgsLayerContextMenu.h">
+      <Filter>layer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layer\tilelayer\tile.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layer\tilelayer\xfileio.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layer\tilelayer\common.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layer\tilelayer\Geometry.h">
+      <Filter>layer\tilelayer\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\qgsAnimalPluginManager.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\qgsGridUtil.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\ui\sampling\qgsSamplingParamDialog.ui">
+      <Filter>ui\sampling</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

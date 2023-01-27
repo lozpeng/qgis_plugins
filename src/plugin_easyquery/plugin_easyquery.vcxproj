@@ -110,6 +110,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <DisableSpecificWarnings>4819;4005</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -121,6 +122,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <DisableSpecificWarnings>4819;4005</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
