@@ -4,10 +4,7 @@
 #include "add/qgsGeometryAddTool.h"
 
 qgsEasyEditorManager::qgsEasyEditorManager(QgisInterface* qgsInterface, QObject* parent)
-	: QObject(parent)
-#ifdef WITH_QTITAN
-	,qgsRibbonPluginUIBase(qgsInterface)
-#endif
+	: qgsRibbonPluginUIBase(qgsInterface)
 	, mGeometryAddTool(nullptr)
 {}
 

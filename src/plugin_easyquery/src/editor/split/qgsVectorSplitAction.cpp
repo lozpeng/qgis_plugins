@@ -210,7 +210,7 @@ bool qgsVectorSplitAction::isSplitByPolygon()
 {
 	if (!mClipLayer)return false;
 
-	QgsWkbTypes::Type lyrType = mClipLayer->wkbType();
-	return lyrType == QgsWkbTypes::Polygon || lyrType == QgsWkbTypes::Polygon25D ||
-		lyrType == QgsWkbTypes::MultiPolygon || QgsWkbTypes::MultiPolygon25D == lyrType;
+	Qgis::WkbType lyrType = mClipLayer->wkbType();
+	return lyrType == Qgis::WkbType::Polygon || lyrType == Qgis::WkbType::Polygon25D ||
+		lyrType == Qgis::WkbType::MultiPolygon || Qgis::WkbType::MultiPolygon25D == lyrType;
 }

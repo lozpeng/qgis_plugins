@@ -41,21 +41,21 @@ void qgsVectorLayerSelectBaseDialog::updateLayers()
 
 	for (; layer_it != mapLayers.end(); ++layer_it)
 	{
-		if (layer_it.value()->type() == QgsMapLayerType::VectorLayer)
+		if (layer_it.value()->type() == Qgis::LayerType::Vector)
 		{
 			layer = qobject_cast<QgsVectorLayer*> (layer_it.value());
-			QgsWkbTypes::Type lyrType = layer->wkbType();
+			Qgis::WkbType lyrType = layer->wkbType();
 			switch (layer->wkbType())
 			{
 				// polygon
-			case QgsWkbTypes::Polygon:
-			case QgsWkbTypes::Polygon25D:
-			case QgsWkbTypes::MultiPolygon:
-			case QgsWkbTypes::MultiPolygon25D:
-			case QgsWkbTypes::LineString:
-			case QgsWkbTypes::LineString25D:
-			case QgsWkbTypes::MultiLineString:
-			case QgsWkbTypes::MultiLineString25D:
+			case Qgis::WkbType::Polygon:
+			case Qgis::WkbType::Polygon25D:
+			case Qgis::WkbType::MultiPolygon:
+			case Qgis::WkbType::MultiPolygon25D:
+			case Qgis::WkbType::LineString:
+			case Qgis::WkbType::LineString25D:
+			case Qgis::WkbType::MultiLineString:
+			case Qgis::WkbType::MultiLineString25D:
 			{
 				QString lyrId = layer->id();
 				QString lyrTxt = layer->name();

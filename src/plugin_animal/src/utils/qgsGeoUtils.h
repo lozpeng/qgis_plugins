@@ -30,12 +30,12 @@ public:
 	static int getEPSGCode(QgsRectangle qgsRect);
 
 	static bool createShpFile(const QString& filePath, 
-								QgsWkbTypes::Type geoType, 
+								Qgis::WkbType geoType, 
 								QList<QPair<QString, QString>> fields, int epsgid);
 
-	static QgsVectorLayer* createMemLayer(QgsWkbTypes::Type geoType, QString epsgid, QString name,QString fields);
+	static QgsVectorLayer* createMemLayer(Qgis::WkbType geoType, QString epsgid, QString name,QString fields);
 	//!打开SHP矢量数据图层
 	static QgsVectorLayer* openShpLayer(QString filePath);
 
-	static QString toTypeStr(QgsWkbTypes::Type geoType);
+	static QString toTypeStr(Qgis::WkbType geoType);
 };

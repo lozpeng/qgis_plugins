@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <QGIS>E:\Dev\Install</QGIS>
+    <OSGW_PATH>F:\Dev\Tools\OSGeo4WX64V2</OSGW_PATH>
+    <QGIS_LIBS>qgis_gui.lib;qgis_core.lib;qgis_native.lib;qgis_analysis.lib;qgis_app.lib</QGIS_LIBS>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="QGIS">
+      <Value>$(QGIS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="OSGW_PATH">
+      <Value>$(OSGW_PATH)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="QGIS_LIBS">
+      <Value>$(QGIS_LIBS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

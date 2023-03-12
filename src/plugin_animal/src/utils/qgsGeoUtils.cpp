@@ -76,7 +76,7 @@ QgsVectorLayer* qgsGeoUtils::openShpLayer(QString filePath)
 		field.first = QString("ID");
 		field.second = QString("Integer");
 		fields << field;
-		bool result = createShpFile(filePath, QgsWkbTypes::Polygon, fields,4480);
+		bool result = createShpFile(filePath, Qgis::WkbType::Polygon, fields,4480);
 		if (!result)return nullptr;
 	}
 	QString name = QFile(filePath).fileName();
@@ -89,7 +89,7 @@ QgsVectorLayer* qgsGeoUtils::openShpLayer(QString filePath)
 	else return nullptr;
 }
 //!创建一个零时内存图层
-QgsVectorLayer* qgsGeoUtils::createMemLayer(QgsWkbTypes::Type geoType, QString epsgid, QString name, QString fields)
+QgsVectorLayer* qgsGeoUtils::createMemLayer(Qgis::WkbType geoType, QString epsgid, QString name, QString fields)
 {
 	if (epsgid <= 0)epsgid = 4480;
 	if (name.isEmpty())name = "MEMORY_LYR" + qrand();
@@ -104,13 +104,12 @@ QgsVectorLayer* qgsGeoUtils::createMemLayer(QgsWkbTypes::Type geoType, QString e
 	return tmpLayer;
 }
 //!将空间数据类型转换为字符串
-QString qgsGeoUtils::toTypeStr(QgsWkbTypes::Type geoType)
+QString qgsGeoUtils::toTypeStr(Qgis::WkbType geoType)
 {
 	return QgsWkbTypes::displayString(geoType);
 }
 //!创建一个shp文件
-bool qgsGeoUtils::createShpFile(const QString& filePath,
-										QgsWkbTypes::Type geoType,
+bool qgsGeoUtils::createShpFile(const QString& filePath, Qgis::WkbType geoType,
 										QList<QPair<QString, QString>> fields, int epsgid)
 {
 	if (epsgid <= 0)epsgid = 4480; //China Geodetic Coordinate System 2000
@@ -131,13 +130,13 @@ bool qgsGeoUtils::createShpFile(const QString& filePath,
 	if (loaded)
 	{
 		typedef bool (*createEmptyDataSourceProc)(const QString&, const QString&, 
-			const QString&, QgsWkbTypes::Type,
+			const QString&, Qgis::WkbType,
 			const QList< QPair<QString, QString> >&, const QgsCoordinateReferenceSystem*);
 		createEmptyDataSourceProc createEmptyDataSource =
 				(createEmptyDataSourceProc)cast_to_fptr(myLib->resolve("createEmptyDataSource"));
 		if (createEmptyDataSource)
 		{
-			if (geoType != QgsWkbTypes::Unknown)
+			if (geoType != Qgis::WkbType::Unknown)
 			{
 				QgsCoordinateReferenceSystem srs(epsgid, QgsCoordinateReferenceSystem::EpsgCrsId);
 				//

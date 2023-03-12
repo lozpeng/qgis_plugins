@@ -2,6 +2,8 @@
 
 #include "base/QgsBaseActionFilter.h"
 #include "sampling/qgsAnimalSamplGridAction.h"
+#include  <qgsapplication.h>
+#include <qgsmapcanvas.h>
 
 qgsAnimalPluginManager::qgsAnimalPluginManager(QgisInterface* qgsInterface) 
 		:qgsRibbonPluginUIBase(qgsInterface),
@@ -32,6 +34,7 @@ void qgsAnimalPluginManager::initUi()
 	qgsAnimalSamplGridAction* act = new qgsAnimalSamplGridAction(this->mQgsInterface);
 	RibbonGroup* rb = mAnimalPage->addGroup(QString::fromLocal8Bit("³éÑù"));
 	rb->addAction(act->getAction());
+
 }
 
 void qgsAnimalPluginManager::setDefaultPages()
@@ -100,4 +103,3 @@ void qgsAnimalPluginManager::unload() {
 		mAnimalPage = nullptr;
 	}
 }
-

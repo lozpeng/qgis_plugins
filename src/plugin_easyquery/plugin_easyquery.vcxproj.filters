@@ -83,6 +83,12 @@
     <ClCompile Include="src\ui\qgsEasyQueryWidget.cpp">
       <Filter>ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\qgsDataInqueryDialog.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\action\qgsDataInqueryAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\base\QgsBaseActionFilter.h">
@@ -118,6 +124,9 @@
     <QtMoc Include="src\ui\qgsEasyQueryWidget.h">
       <Filter>ui</Filter>
     </QtMoc>
+    <QtMoc Include="src\ui\qgsDataInqueryDialog.h">
+      <Filter>ui</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="resources\plugin_easyquery.qrc">
@@ -131,6 +140,9 @@
     <ClInclude Include="src\geojson\CoordinatesCompressor.h">
       <Filter>geojson</Filter>
     </ClInclude>
+    <ClInclude Include="src\action\qgsDataInqueryAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui">
@@ -143,6 +155,9 @@
       <Filter>editor\add</Filter>
     </QtUic>
     <QtUic Include="src\ui\qgsEasyQueryWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\qgsDataInqueryDialogBase.ui">
       <Filter>ui</Filter>
     </QtUic>
   </ItemGroup>

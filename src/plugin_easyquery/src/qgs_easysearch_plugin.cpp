@@ -96,9 +96,9 @@ void qgs_es_plugin::initGui() {
 	}
 	//
 	//监听地图图层切换事件。
-	connect(mQGisIface->mapCanvas(), &QgsMapCanvas::currentLayerChanged, this, &qgs_es_plugin::on_currentLayerChanged);
+	connect(mQGisIface->mapCanvas(), &QgsMapCanvas::currentLayerChanged, 
+									this, &qgs_es_plugin::on_currentLayerChanged);
 	//建一个文本输入框
-	
 	//connect(QgisApp::instance(),&QgisApp::toggleEditingVectorLayer,)
 }
 //! unload the plugin

@@ -113,8 +113,8 @@ void qgsGeometryAddTool::cadCanvasReleaseEvent(QgsMapMouseEvent* e) {
 		notifyNotEditableLayer();
 		return;
 	}
-	QgsWkbTypes::Type lyrWkbType = vlayer->wkbType();
-	if (lyrWkbType != QgsWkbTypes::Polygon && lyrWkbType != QgsWkbTypes::MultiPolygon)
+	Qgis::WkbType lyrWkbType = vlayer->wkbType();
+	if (lyrWkbType != Qgis::WkbType::Polygon && lyrWkbType != Qgis::WkbType::MultiPolygon)
 	{
 		emit messageEmitted(tr("Layer not a polygon layer!"));
 		return;
@@ -265,18 +265,18 @@ void qgsToolAddFeatureFreehand::canvasPressEvent(QgsMapMouseEvent* e)
 		emit messageEmitted(tr("Layer not in a editing mode!"));
 		return;
 	}
-	QgsWkbTypes::Type lyrGeoType = mCurrentLayer->wkbType();
+	Qgis::WkbType lyrGeoType = mCurrentLayer->wkbType();
 	if (!mRubberBand)
 	{
 		//判断不同类型构建rubberBand
-		if (lyrGeoType == QgsWkbTypes::Polygon || lyrGeoType == QgsWkbTypes::MultiPolygon
-			|| lyrGeoType == QgsWkbTypes::MultiPolygon25D || lyrGeoType == QgsWkbTypes::Polygon25D)
+		if (lyrGeoType == Qgis::WkbType::Polygon || lyrGeoType == Qgis::WkbType::MultiPolygon
+			|| lyrGeoType == Qgis::WkbType::MultiPolygon25D || lyrGeoType == Qgis::WkbType::Polygon25D)
 		{
-			mRubberBand = new QgsRubberBand(mCanvas, QgsWkbTypes::GeometryType::PolygonGeometry);
+			mRubberBand = new QgsRubberBand(mCanvas, Qgis::GeometryType::Polygon);
 			mRubberBand->setFillColor(mFillColor);
 			//	mRubberBand->setBorderColor( mBorderColour );
 		}
-		else if (lyrGeoType == QgsWkbTypes::LineString || lyrGeoType == QgsWkbTypes::MultiLineString)
+		else if (lyrGeoType == Qgis::WkbType::LineString || lyrGeoType == Qgis::WkbType::MultiLineString)
 		{
 			mRubberBand = new QgsRubberBand(mCanvas);
 			//	mRubberBand->setBorderColor( mBorderColour );
@@ -390,7 +390,7 @@ void qgsToolAddFeatureFreehand::canvasReleaseEvent(QgsMapMouseEvent* e)
 				{
 					this->mCanvas->refresh();
 
-					mRubberBand->reset(QgsWkbTypes::GeometryType::PolygonGeometry);
+					mRubberBand->reset(Qgis::GeometryType::Polygon);
 					delete mRubberBand;
 					mRubberBand = nullptr;
 					mDragging = false;
@@ -411,7 +411,7 @@ void qgsToolAddFeatureFreehand::canvasReleaseEvent(QgsMapMouseEvent* e)
 			this->mCanvas->refresh();
 		}
 	}
-	mRubberBand->reset(QgsWkbTypes::GeometryType::PolygonGeometry);
+	mRubberBand->reset(Qgis::GeometryType::Polygon);
 	delete mRubberBand;
 	mRubberBand = nullptr;
 	mDragging = false;
@@ -674,8 +674,8 @@ void qgsGeometryEditUtils::processGeometry(QgsVectorLayer* vlayer, const QgsGeom
 //新建要素保存数据
 void qgsGeometryEditUtils::saveGeometry(QgsVectorLayer* vlayer, const QgsGeometry geos)
 {
-	QgsWkbTypes::Type lyrGeoType = vlayer->wkbType();
-	QgsWkbTypes::Type geoType = geos.wkbType();
+	Qgis::WkbType lyrGeoType = vlayer->wkbType();
+	Qgis::WkbType geoType = geos.wkbType();
 	//这里只对WkbPolygon和WkbMultiPolygon进行分析处理和数据保存的工作
 	if (geoType == lyrGeoType)//如果几何图形的类型与图层相同则直接保存
 	{
@@ -694,7 +694,7 @@ void qgsGeometryEditUtils::saveGeometry(QgsVectorLayer* vlayer, const QgsGeometr
 		//vlayer->editBuffer()->addFeature(nFeature);
 		return;
 	}
-	else if (geoType == QgsWkbTypes::Polygon && lyrGeoType == QgsWkbTypes::MultiPolygon)
+	else if (geoType == Qgis::WkbType::Polygon && lyrGeoType == Qgis::WkbType::MultiPolygon)
 	{
 		QgsFeature nFeature;
 		nFeature.initAttributes(vlayer->fields().count());
@@ -707,14 +707,14 @@ void qgsGeometryEditUtils::saveGeometry(QgsVectorLayer* vlayer, const QgsGeometr
 		editFeatureAttr(vlayer, &nFeature);
 		return;
 	}
-	else if (geoType == QgsWkbTypes::MultiPolygon && lyrGeoType == QgsWkbTypes::Polygon)
+	else if (geoType == Qgis::WkbType::MultiPolygon && lyrGeoType == Qgis::WkbType::Polygon)
 	{
 		QVector<QgsGeometry> inGeos = geos.asGeometryCollection();
 		if (inGeos.count() <= 0)return;
 		Q_FOREACH(QgsGeometry geo, inGeos)//循环所有的几何图形获取需要的图形数据
 		{
 			if (!geo.isEmpty()) {
-				QgsWkbTypes::Type geoType2 = geo.wkbType();
+				Qgis::WkbType geoType2 = geo.wkbType();
 				if (geoType2 == lyrGeoType)//如果两个的类型相同则直接保存，否则需要分解为子部分进行处理
 				{
 					QgsFeature nFeature;
@@ -728,7 +728,7 @@ void qgsGeometryEditUtils::saveGeometry(QgsVectorLayer* vlayer, const QgsGeometr
 					return;
 				}
 				else
-					if (geoType2 == QgsWkbTypes::MultiPolygon)//多部多边形则分解和创建Feature保存
+					if (geoType2 == Qgis::WkbType::MultiPolygon)//多部多边形则分解和创建Feature保存
 						saveGeometry(vlayer, geo);
 			}
 		}
@@ -738,8 +738,8 @@ void qgsGeometryEditUtils::saveGeometry(QgsVectorLayer* vlayer, const QgsGeometr
 bool qgsGeometryEditUtils::changeFeatureGeo(QgsVectorLayer* vlayer, int fid, QgsGeometry* inGeo, bool changed)
 {
 	if (!inGeo || inGeo->isEmpty())return false;
-	QgsWkbTypes::Type lyrGeoType = vlayer->wkbType();
-	QgsWkbTypes::Type geoType = inGeo->wkbType();
+	Qgis::WkbType lyrGeoType = vlayer->wkbType();
+	Qgis::WkbType geoType = inGeo->wkbType();
 
 	if (geoType == lyrGeoType)//如果输入的图形与图层的图形一致则直接替换要素的几何图形
 	{
@@ -747,14 +747,14 @@ bool qgsGeometryEditUtils::changeFeatureGeo(QgsVectorLayer* vlayer, int fid, Qgs
 		return true;
 	}
 	//如果要素为
-	else if (geoType == QgsWkbTypes::Polygon && lyrGeoType == QgsWkbTypes::MultiPolygon)
+	else if (geoType == Qgis::WkbType::Polygon && lyrGeoType == Qgis::WkbType::MultiPolygon)
 	{
 		QgsGeometry mgeo = QgsGeometry::fromMultiPolygonXY(inGeo->asMultiPolygon());
 		if (!mgeo.isEmpty())
 			vlayer->editBuffer()->changeGeometry(fid, mgeo);
 		return true;
 	}
-	else if (geoType == QgsWkbTypes::MultiPolygon && lyrGeoType == QgsWkbTypes::Polygon)
+	else if (geoType == Qgis::WkbType::MultiPolygon && lyrGeoType == Qgis::WkbType::Polygon)
 	{
 		QVector<QgsGeometry> inGeos = inGeo->asGeometryCollection();
 		if (inGeos.count() <= 0)return false;
@@ -762,7 +762,7 @@ bool qgsGeometryEditUtils::changeFeatureGeo(QgsVectorLayer* vlayer, int fid, Qgs
 		Q_FOREACH(QgsGeometry geo, inGeos)//循环所有的几何图形获取需要的图形数据
 		{
 			if (!geo.isEmpty()) {
-				QgsWkbTypes::Type geoType2 = geo.wkbType();
+				Qgis::WkbType geoType2 = geo.wkbType();
 				if (geoType2 == lyrGeoType)//如果两个的类型相同则直接保存，否则需要分解为子部分进行处理
 				{
 					if (!changeOld)
@@ -779,7 +779,7 @@ bool qgsGeometryEditUtils::changeFeatureGeo(QgsVectorLayer* vlayer, int fid, Qgs
 					}
 				}
 				else
-					if (geoType2 == QgsWkbTypes::MultiPolygon)//多部多边形则分解和创建Feature保存
+					if (geoType2 == Qgis::WkbType::MultiPolygon)//多部多边形则分解和创建Feature保存
 						changeOld = changeFeatureGeo(vlayer, fid, &geo, changeOld);//  saveGeometry(vlayer,geo);
 			}
 		}

@@ -47,7 +47,7 @@ void qgsSamplingEvalAction::on_currentlayer_changed(QgsMapLayer* lyr)
 int qgsSamplingEvalAction::compute()
 {
 
-
+	return -1;
 }
 
 //inherited from BaseFilter
@@ -55,7 +55,7 @@ int qgsSamplingEvalAction::openInputDialog()
 {
 
 
-
+	return -1;
 }
 void qgsSamplingEvalAction::getParametersFromDialog()
 {

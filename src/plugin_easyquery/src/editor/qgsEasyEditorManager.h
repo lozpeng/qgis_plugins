@@ -7,10 +7,7 @@
 
 #include "add/qgsGeometryAddTool.h"
 //!编辑工具管理类
-class qgsEasyEditorManager  : public QObject
-#ifdef WITH_QTITAN
-	,public qgsRibbonPluginUIBase
-#endif
+class qgsEasyEditorManager : public qgsRibbonPluginUIBase
 {
 	Q_OBJECT
 

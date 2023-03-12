@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plugin_easyquery", "src\plu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plugin_animal", "src\plugin_animal\plugin_animal.vcxproj", "{B43B8531-32BF-4987-B589-06379D33C30B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plugin_onlinemap", "src\plugin_onlinemap\plugin_onlinemap.vcxproj", "{D1D2F30B-DD1E-446E-B09A-546F9FC2C633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		DebugRel|x64 = DebugRel|x64
@@ -27,6 +29,10 @@ Global
 		{B43B8531-32BF-4987-B589-06379D33C30B}.DebugRel|x64.Build.0 = DebugRel|x64
 		{B43B8531-32BF-4987-B589-06379D33C30B}.Release|x64.ActiveCfg = Release|x64
 		{B43B8531-32BF-4987-B589-06379D33C30B}.Release|x64.Build.0 = Release|x64
+		{D1D2F30B-DD1E-446E-B09A-546F9FC2C633}.DebugRel|x64.ActiveCfg = DebugRel|x64
+		{D1D2F30B-DD1E-446E-B09A-546F9FC2C633}.DebugRel|x64.Build.0 = DebugRel|x64
+		{D1D2F30B-DD1E-446E-B09A-546F9FC2C633}.Release|x64.ActiveCfg = Release|x64
+		{D1D2F30B-DD1E-446E-B09A-546F9FC2C633}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

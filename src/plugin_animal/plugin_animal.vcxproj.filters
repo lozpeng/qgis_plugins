@@ -13,15 +13,6 @@
     <Filter Include="ui">
       <UniqueIdentifier>{30777e7b-1be2-4061-b8d3-122f8bee05b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="layer">
-      <UniqueIdentifier>{80188589-7937-4c8f-980f-a362a3f2eec3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="layer\tilelayer">
-      <UniqueIdentifier>{e1df17d6-876c-4d69-984c-146b4b3f77be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="layer\tilelayer\utils">
-      <UniqueIdentifier>{5d82e03a-52bf-4c72-a24c-c173bd879c24}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ui\sampling">
       <UniqueIdentifier>{3c2919fd-93d1-47e9-8673-39505abfd36c}</UniqueIdentifier>
     </Filter>
@@ -42,33 +33,6 @@
     <ClCompile Include="src\plugin_exports.cpp" />
     <ClCompile Include="src\qgs_plugin_imp.cpp">
       <Filter>plugin</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\qgsLayerContextMenu.cpp">
-      <Filter>layer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\qgsTiledCustomLayer.cpp">
-      <Filter>layer\tilelayer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\TileDB.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\HttpFun.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\ReadTileDb.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\SilenTileDb.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\tile.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\MultiTileThread.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer\tilelayer\Geometry.cpp">
-      <Filter>layer\tilelayer\utils</Filter>
     </ClCompile>
     <ClCompile Include="src\ui\qgsAnimalPluginManager.cpp">
       <Filter>ui</Filter>
@@ -99,24 +63,6 @@
     <QtMoc Include="src\qgs_plugin_imp.h">
       <Filter>plugin</Filter>
     </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\qgsTiledCustomLayer.h">
-      <Filter>layer\tilelayer</Filter>
-    </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\TileDB.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\HttpFun.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\ReadTileDb.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\SilenTileDb.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </QtMoc>
-    <QtMoc Include="src\layer\tilelayer\MultiTileThread.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </QtMoc>
     <QtMoc Include="src\ui\sampling\qgsAnimalSamplGridAction.h">
       <Filter>ui\sampling</Filter>
     </QtMoc>
@@ -131,21 +77,6 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\layer\qgsLayerContextMenu.h">
-      <Filter>layer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\layer\tilelayer\tile.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\layer\tilelayer\xfileio.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\layer\tilelayer\common.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\layer\tilelayer\Geometry.h">
-      <Filter>layer\tilelayer\utils</Filter>
-    </ClInclude>
     <ClInclude Include="src\ui\qgsAnimalPluginManager.h">
       <Filter>ui</Filter>
     </ClInclude>

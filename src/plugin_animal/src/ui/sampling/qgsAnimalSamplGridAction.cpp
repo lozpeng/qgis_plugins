@@ -74,7 +74,7 @@ int qgsAnimalSamplGridAction::compute()
 	int epsgCode = srid.toInt();
 	 //!数据都先暂时存放在内存中
 	QString fields = "field=minx:double&field=maxx:double&field=miny:double&field=maxy:double";
-	QgsVectorLayer* gridLayer = qgsGeoUtils::createMemLayer(QgsWkbTypes::Polygon, srid, QString::fromLocal8Bit("抽样网格"), fields);
+	QgsVectorLayer* gridLayer = qgsGeoUtils::createMemLayer(Qgis::WkbType::Polygon, srid, QString::fromLocal8Bit("抽样网格"), fields);
 	if (!gridLayer)return -1;
 	if (gridLayer)
 		QgsProject::instance()->addMapLayer(gridLayer);

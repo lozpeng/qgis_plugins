@@ -1,7 +1,6 @@
 #include "qgs_plugin_imp.h"
 
 #include "ui/qgsAnimalPluginManager.h"
-#include "layer/qgsLayerContextMenu.h"
 
 qgs_plugin_imp::qgs_plugin_imp(QgisInterface* theInterface) :
 	mQGisIface(theInterface), mUIManager(nullptr)

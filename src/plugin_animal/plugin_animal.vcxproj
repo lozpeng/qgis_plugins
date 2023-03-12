@@ -16,15 +16,6 @@
   <ItemGroup>
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp" />
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
-    <ClCompile Include="src\layer\qgsLayerContextMenu.cpp" />
-    <ClCompile Include="src\layer\tilelayer\Geometry.cpp" />
-    <ClCompile Include="src\layer\tilelayer\HttpFun.cpp" />
-    <ClCompile Include="src\layer\tilelayer\MultiTileThread.cpp" />
-    <ClCompile Include="src\layer\tilelayer\qgsTiledCustomLayer.cpp" />
-    <ClCompile Include="src\layer\tilelayer\ReadTileDb.cpp" />
-    <ClCompile Include="src\layer\tilelayer\SilenTileDb.cpp" />
-    <ClCompile Include="src\layer\tilelayer\tile.cpp" />
-    <ClCompile Include="src\layer\tilelayer\TileDB.cpp" />
     <ClCompile Include="src\plugin_exports.cpp" />
     <ClCompile Include="src\qgs_plugin_imp.cpp" />
     <ClCompile Include="src\ui\eval\qgsSamplingEvalAction.cpp" />
@@ -44,23 +35,12 @@
     <QtMoc Include="src\qgs_plugin_imp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\layer\qgsLayerContextMenu.h" />
-    <ClInclude Include="src\layer\tilelayer\common.h" />
-    <ClInclude Include="src\layer\tilelayer\Geometry.h" />
     <QtMoc Include="src\ui\eval\qgsSamplingEvalAction.h" />
     <ClInclude Include="src\ui\qgsAnimalPluginManager.h" />
     <ClInclude Include="src\utils\qgsGridUtil.h" />
     <QtMoc Include="src\utils\qgsGeoUtils.h" />
     <QtMoc Include="src\ui\sampling\qgsSamplingParamDialog.h" />
     <QtMoc Include="src\ui\sampling\qgsAnimalSamplGridAction.h" />
-    <QtMoc Include="src\layer\tilelayer\MultiTileThread.h" />
-    <ClInclude Include="src\layer\tilelayer\tile.h" />
-    <ClInclude Include="src\layer\tilelayer\xfileio.h" />
-    <QtMoc Include="src\layer\tilelayer\SilenTileDb.h" />
-    <QtMoc Include="src\layer\tilelayer\ReadTileDb.h" />
-    <QtMoc Include="src\layer\tilelayer\HttpFun.h" />
-    <QtMoc Include="src\layer\tilelayer\TileDB.h" />
-    <QtMoc Include="src\layer\tilelayer\qgsTiledCustomLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\ui\sampling\qgsSamplingParamDialog.ui" />

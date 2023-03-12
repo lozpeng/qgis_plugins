@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\action\qgsDataInqueryAction.cpp" />
     <ClCompile Include="src\action\QgsLayerQueryAction.cpp" />
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp" />
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
@@ -22,6 +23,7 @@
     <ClCompile Include="src\editor\split\qgsVectorSplitAction.cpp" />
     <ClCompile Include="src\geojson\CoordinatesCompressor.cpp" />
     <ClCompile Include="src\qgs_easysearch_plugin.cpp" />
+    <ClCompile Include="src\ui\qgsDataInqueryDialog.cpp" />
     <ClCompile Include="src\ui\qgsEasyQueryWidget.cpp" />
     <ClCompile Include="src\ui\qgslayerfieldsbasedialog.cpp" />
   </ItemGroup>
@@ -35,7 +37,9 @@
     <QtMoc Include="src\qgs_easysearch_plugin.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\action\qgsDataInqueryAction.h" />
     <ClInclude Include="src\action\QgsLayerQueryAction.h" />
+    <QtMoc Include="src\ui\qgsDataInqueryDialog.h" />
     <QtMoc Include="src\ui\qgsEasyQueryWidget.h" />
     <QtMoc Include="src\editor\qgsExplodeMultiPartsAction.h" />
     <QtMoc Include="src\editor\split\qgsVectorSplitAction.h" />
@@ -50,6 +54,7 @@
   <ItemGroup>
     <QtUic Include="src\editor\add\qgsCoordInputDialogBase.ui" />
     <QtUic Include="src\editor\split\qgsVectorLayerSelectBaseDialog.ui" />
+    <QtUic Include="src\ui\qgsDataInqueryDialogBase.ui" />
     <QtUic Include="src\ui\qgsEasyQueryWidget.ui" />
     <QtUic Include="src\ui\qgslayerfieldsbasedialog.ui" />
   </ItemGroup>
