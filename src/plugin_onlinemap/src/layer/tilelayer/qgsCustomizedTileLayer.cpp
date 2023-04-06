@@ -276,7 +276,6 @@ namespace geotile {
 			QgsWmsTiledImageDownloadHandler handler(requestsFinal, pRender);
 			handler.downloadBlocking();
 		}
-
 		return true;
 	}
 	/*
@@ -285,12 +284,12 @@ namespace geotile {
 	QgsMapLayerRenderer* qgsCustomizedTileLayer::createMapRenderer(QgsRenderContext& rendererContext)
 	{
 		qTileLayerRender* pRender = new qTileLayerRender(this, rendererContext);
-		Q_EMIT this->tileDraw(pRender);
+		emit tileDraw(pRender);
 		this->render(rendererContext, pRender);
 		return  pRender;
 	}
 
-	void  qgsCustomizedTileLayer::on_TileDraw(qTileLayerRender* pRender)
+	void  qgsCustomizedTileLayer::on_tileDraw(qTileLayerRender* pRender)
 	{
 		this->render(pRender->RenderContext(), pRender);
 	}

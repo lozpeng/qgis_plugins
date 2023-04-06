@@ -255,7 +255,9 @@ QString QgsBaseActionFilter::getErrorMessage(int errorCode)
 	case -32:
 		errorMsg = QString::fromLocal8Bit("线程正在运行中!");
 		break;
-
+	case -33:
+		errorMsg = QString::fromLocal8Bit("请打开图层编辑状态！");
+		break;
 		// DEFAULT
 	default:
 		errorMsg = QString(QString::fromLocal8Bit("未定义的错误: ")

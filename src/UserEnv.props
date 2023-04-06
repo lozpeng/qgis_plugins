@@ -5,6 +5,9 @@
     <QGIS>E:\Dev\Install</QGIS>
     <OSGW_PATH>F:\Dev\Tools\OSGeo4WX64V2</OSGW_PATH>
     <QGIS_LIBS>qgis_gui.lib;qgis_core.lib;qgis_native.lib;qgis_analysis.lib;qgis_app.lib</QGIS_LIBS>
+    <QTDIR>F:/Dev/Tools/OSGeo4WX64V2/apps/Qt5</QTDIR>
+    <QtToolsPath>F:\Dev\Tools\OSGeo4WX64V2\apps\Qt5\bin</QtToolsPath>
+    <BASE_CODES>F:\Dev\GIS\qgis_plugins\src\base</BASE_CODES>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -19,6 +22,17 @@
     </BuildMacro>
     <BuildMacro Include="QGIS_LIBS">
       <Value>$(QGIS_LIBS)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="QTDIR">
+      <Value>$(QTDIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="QtToolsPath">
+      <Value>$(QtToolsPath)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BASE_CODES">
+      <Value>$(BASE_CODES)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>

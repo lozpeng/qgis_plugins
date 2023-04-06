@@ -167,7 +167,7 @@ namespace geotile {
 		void slot_requestHeaderFinished(bool bSuccess, const QByteArray& data);
 		void slot_requestBlock(LONGLONG tid);
 		//!ÍßÆ¬äÖÈ¾ÊÂ¼þ
-		void on_TileDraw(qTileLayerRender* pRender);
+		void on_tileDraw(qTileLayerRender* pRender);
 	};
 }
 #endif

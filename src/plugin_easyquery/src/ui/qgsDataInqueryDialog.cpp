@@ -7,76 +7,69 @@
 #include <qgsmaplayer.h>
 #include <qgsvectorlayer.h>
 
+#include "qgsLayerUtils.h"
+
 qgsDataInqueryDialog::qgsDataInqueryDialog(QgisInterface* qgsInterface):
 	mQgsInterface(qgsInterface)
 {
 	setupUi(this);
-
+	setWindowFlags(windowFlags()
+		& ~Qt::WindowCloseButtonHint
+		& ~Qt::WindowContextHelpButtonHint
+		& ~Qt::WindowMinimizeButtonHint
+		& ~Qt::WindowMaximizeButtonHint);
+	setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+	//
+	qgsLayerUtils::loadVectorLayerNames(this->mComboTargetLyr, QString());
 }
-
+qgsDataInqueryDialog::~qgsDataInqueryDialog()
+{
+	mQgsInterface = nullptr;
+}
 
 void qgsDataInqueryDialog::on_mComboTargetLyr_currentIndexChanged(int index)
 {
-	QString lyrId = mComboTargetLyr->currentIndex();
+	int idx = mComboTargetLyr->currentIndex();
+	QVariant lyrId = mComboTargetLyr->itemData(idx);
+	QString str = lyrId.toString();
 
-
+	qgsLayerUtils::loadVectorLayerNames(this->mComboSrcLyr, str);
+	qgsLayerUtils::loadLayerFieldsNames(this->mComboTargetField, str);
 }
+
+
 void qgsDataInqueryDialog::on_mComboSrcLyr_currentIndexChanged(int index)
 {
-
+	int idx = mComboSrcLyr->currentIndex();
+	QVariant lyrId = mComboSrcLyr->itemData(idx);
+	QString str = lyrId.toString();
+	qgsLayerUtils::loadLayerFieldsNames(this->mComboSrcField, str);
 }
-QgsVectorLayer* vectorLayerByName(const QString& name)
+/// <summary>
+/// 获取参数
+/// </summary>
+/// <param name="params"></param>
+/// <returns></returns>
+bool qgsDataInqueryDialog::getParams(sDataInqueryParams& params)
 {
-	QMap<QString, QgsMapLayer*> mapLayers = QgsProject::instance()->mapLayers();
-	QMap<QString, QgsMapLayer*>::iterator layer_it = mapLayers.begin();
+	int idx = mComboSrcLyr->currentIndex();
+	QVariant lyrId = mComboSrcLyr->itemData(idx);
+	params.srcLyrIdx = lyrId.toString();
+	params.srcFldName = mComboSrcField->currentText();
 
-	for (; layer_it != mapLayers.end(); ++layer_it)
-	{
-		if (layer_it.value()->type() == Qgis::LayerType::Vector && layer_it.value()->name() == name)
-		{
-			return qobject_cast<QgsVectorLayer*>(layer_it.value());
-		}
-	}
-	return 0;
+	idx = mComboTargetLyr->currentIndex();
+	lyrId = mComboTargetLyr->itemData(idx);
+	params.tarLyrIdx = lyrId.toString();
+	params.tarFldName = mComboTargetField->currentText();
+	return true;
 }
-QgsVectorLayer* vectorLayerById(const QString& id)
-{
-	QMap<QString, QgsMapLayer*> mapLayers = QgsProject::instance()->mapLayers();
-	QMap<QString, QgsMapLayer*>::iterator layer_it = mapLayers.begin();
 
-	for (; layer_it != mapLayers.end(); ++layer_it)
-	{
-		if (layer_it.value()->type() == Qgis::LayerType::Vector && layer_it.value()->id() == id)
-		{
-			return qobject_cast<QgsVectorLayer*>(layer_it.value());
-		}
-	}
-	return 0;
+void qgsDataInqueryDialog::on_pbOk_clicked(bool checked)
+{
+	this->accept();
 }
-//！加载图层名称
-void qgsDataInqueryDialog::loadLayerNames(QComboBox* combox,QString exLyrId)
+
+void qgsDataInqueryDialog::on_pbCancel_clicked(bool checked)
 {
-	if (!mQgsInterface)return;
-	combox->clear();
-
-	QMap<QString, QgsMapLayer*> mapLayers =  QgsProject::instance()->mapLayers(true);
-	if (mapLayers.size() <= 0)return;
-	QMap<QString, QgsMapLayer*>::iterator layer_it = mapLayers.begin();
-
-	//!图层处理
-	for (; layer_it != mapLayers.end(); ++layer_it)
-	{
-		if (layer_it.value()->type() == Qgis::LayerType::Vector)
-		{
-			QgsVectorLayer*  vectorLayer = qobject_cast<QgsVectorLayer*> (layer_it.value());
-			if (vectorLayer) //当图层为矢量图层时才支持数据处理
-			{
-				QString lyrId = vectorLayer->id();
-				//
-				if (!exLyrId.isEmpty() && exLyrId.compare(lyrId, Qt::CaseInsensitive)==0)
-					continue;
-				combox->addItem(vectorLayer->name(), QVariant(lyrId));
-			}
-		}
-	}
+	this->reject();
 }

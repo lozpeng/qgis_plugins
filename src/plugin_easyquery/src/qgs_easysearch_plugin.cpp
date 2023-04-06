@@ -14,8 +14,10 @@
 #include <QCoreApplication>
 
 #include "action/QgsLayerQueryAction.h"
+#include "action/qgsDataInqueryAction.h"
 #include "editor/qgsExplodeMultiPartsAction.h"
 #include "editor/split/qgsVectorSplitAction.h"
+
 
 static const QString sName = QString::fromLocal8Bit("图层快速查询插件");
 static const QString sDescription = QString::fromLocal8Bit("图层快速查询插件");
@@ -88,6 +90,8 @@ void qgs_es_plugin::initGui() {
 	mSplitAction->setOptData(1);
 	mSplitAction->setEnabled(false);
 	this->addActionFilter(mSplitAction);
+
+	this->addActionFilter(new qgsDataInqueryAction());
 
 	for (std::vector<QgsBaseActionFilter*>::const_iterator it = m_ActionsFilters.begin();
 		it != m_ActionsFilters.end(); ++it)

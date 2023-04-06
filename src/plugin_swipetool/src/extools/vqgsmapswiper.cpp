@@ -117,8 +117,8 @@ void vQgsMapSwiper::unload()
 	*/
 
 	mQgsInterface->removeRasterToolBarIcon(mAction);
-	disconnect(mAction, &QAction::triggered, this, &vQgsMapSwiper::on_ation_triggered);
+	//disconnect(mAction, &QAction::triggered, this, &vQgsMapSwiper::on_ation_triggered);
 
 	mQgsInterface->removeRasterToolBarIcon(mXAction);
-	disconnect(mXAction, &QAction::triggered, this, &vQgsMapSwiper::on_xation_triggered);
+	//disconnect(mXAction, &QAction::triggered, this, &vQgsMapSwiper::on_xation_triggered);
 }

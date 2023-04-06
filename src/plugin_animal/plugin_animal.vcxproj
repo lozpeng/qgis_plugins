@@ -18,6 +18,8 @@
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
     <ClCompile Include="src\plugin_exports.cpp" />
     <ClCompile Include="src\qgs_plugin_imp.cpp" />
+    <ClCompile Include="src\ui\buffer\qgsBufferingAction.cpp" />
+    <ClCompile Include="src\ui\buffer\qgsBufferingDialog.cpp" />
     <ClCompile Include="src\ui\eval\qgsSamplingEvalAction.cpp" />
     <ClCompile Include="src\ui\qgsAnimalPluginManager.cpp" />
     <ClCompile Include="src\ui\sampling\qgsAnimalSamplGridAction.cpp" />
@@ -36,6 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\ui\eval\qgsSamplingEvalAction.h" />
+    <QtMoc Include="src\ui\buffer\qgsBufferingAction.h" />
+    <QtMoc Include="src\ui\buffer\qgsBufferingDialog.h" />
     <ClInclude Include="src\ui\qgsAnimalPluginManager.h" />
     <ClInclude Include="src\utils\qgsGridUtil.h" />
     <QtMoc Include="src\utils\qgsGeoUtils.h" />
@@ -43,6 +47,7 @@
     <QtMoc Include="src\ui\sampling\qgsAnimalSamplGridAction.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="src\ui\buffer\qgsBufferingDialogBase.ui" />
     <QtUic Include="src\ui\sampling\qgsSamplingParamDialog.ui" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -62,18 +67,27 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>Qt5.15.2G</QtInstall>
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
+    <QtInstall>QT5</QtInstall>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="QtSettings">
-    <QtInstall>Qt5.15.2G</QtInstall>
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent;networkauth</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
+    <QtInstall>QT5</QtInstall>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -99,10 +113,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <DisableSpecificWarnings>4819;4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -111,10 +127,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(ProjectDir)src;$(QGIS)/include;$(QGIS)/include/qtrib;$(QGIS)/include/app;$(QGIS)/include/gui;$(QGIS)/include/ui;$(OPENCV)/include;$(OSGW_PATH)/include;$(QTDIR)/include;$(QTDIR)/include/QtCrypto;$(QTDIR)/include/qt5keychain;.\src\image;.\src\image\ui;.\src\image\ml;.\src\extools;.\src\extools\mapswip;.\src\image\gexif\gui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <DisableSpecificWarnings>4819;4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(QGIS)/lib;$(OSGW_PATH)/lib;$(OPENCV)/$(Platform)/$(PlatformToolset)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -129,6 +147,8 @@
       <Optimization>MaxSpeed</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PreprocessorDefinitions>WIN32;_WINDOWS;WITH_BINDINGS;SIP_VERSION=0x04130d;PROJ_VERSION_MAJOR=5;SPATIALITE_VERSION_GE_4_0_0;SPATIALITE_VERSION_G_4_1_1;SPATIALITE_HAS_INIT_EX;NDEBUG;WITH_QTITAN;QTN_NAMESPACE;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);CUSTOMWIDGETS_EXPORT=__declspec(dllimport);SERVER_EXPORT=__declspec(dllimport);QTITAN_EXPORT=__declspec(dllimport);WITH_QTWEBKIT;QT_DISABLE_DEPRECATED_BEFORE=0x050800;QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;QGIS_DISABLE_DEPRECATED;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,6 +163,8 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessorDefinitions>WIN32;_WINDOWS;WITH_BINDINGS;SIP_VERSION=0x04130d;PROJ_VERSION_MAJOR=5;SPATIALITE_VERSION_GE_4_0_0;SPATIALITE_VERSION_G_4_1_1;SPATIALITE_HAS_INIT_EX;NDEBUG;WITH_QTITAN;QTN_NAMESPACE;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);CUSTOMWIDGETS_EXPORT=__declspec(dllimport);SERVER_EXPORT=__declspec(dllimport);QTITAN_EXPORT=__declspec(dllimport);WITH_QTWEBKIT;QT_DISABLE_DEPRECATED_BEFORE=0x050800;QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;QGIS_DISABLE_DEPRECATED;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -150,6 +172,9 @@
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
   </ImportGroup>

@@ -5,7 +5,9 @@
 
 #include <qgsvectorlayer.h>
 
+#include "ui/qgsDataInqueryDialog.h"
 class QgsVectorLayer;
+class qgsDataInqueryDialog;
 //!Õº≤„≤È—Ø
 class qgsDataInqueryAction :public QgsBaseActionFilter
 {
@@ -19,6 +21,7 @@ protected:
 	virtual void getParametersFromDialog();
 
 private:
-	QDialog* mParamDialog;
+	qgsDataInqueryDialog* mParamDialog;
+	sDataInqueryParams mParams;
 };
 

@@ -2,6 +2,8 @@
 
 #include "base/QgsBaseActionFilter.h"
 #include "sampling/qgsAnimalSamplGridAction.h"
+#include "buffer/qgsBufferingAction.h"
+
 #include  <qgsapplication.h>
 #include <qgsmapcanvas.h>
 
@@ -33,7 +35,11 @@ void qgsAnimalPluginManager::initUi()
 	//首先要转换坐标系为投影坐标系
 	qgsAnimalSamplGridAction* act = new qgsAnimalSamplGridAction(this->mQgsInterface);
 	RibbonGroup* rb = mAnimalPage->addGroup(QString::fromLocal8Bit("抽样"));
+	qgsBufferingAction* bufferAct = new qgsBufferingAction(mQgsInterface);
+	
+
 	rb->addAction(act->getAction());
+	rb->addAction(bufferAct->getAction());
 
 }
 
