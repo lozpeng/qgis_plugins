@@ -32,8 +32,6 @@ void qgsPluginUIManager::initUi()
 	qgsAddTDTLayerAction* act = new qgsAddTDTLayerAction(this->mQgsInterface);
 
 	rb->addAction(act->getAction());
-
-
 }
 
 void qgsPluginUIManager::load() {

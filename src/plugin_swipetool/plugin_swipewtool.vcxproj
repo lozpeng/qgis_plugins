@@ -68,12 +68,12 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>Qt5.15.2G</QtInstall>
+    <QtInstall>OSGeo_QT5</QtInstall>
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="QtSettings">
-    <QtInstall>Qt5.15.2G</QtInstall>
+    <QtInstall>OSGeo_QT5</QtInstall>
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>

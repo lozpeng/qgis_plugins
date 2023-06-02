@@ -10,6 +10,7 @@
 #include <QgsVectorLayerEditBuffer.h>
 #include <qgscoordinatereferencesystem.h>
 #include <qgsproject.h>
+#include <qgsmemoryproviderutils.h>
 #include "utils/qgsGeoUtils.h"
 #include "qgsBufferingDialog.h"
 
@@ -46,8 +47,13 @@ int qgsBufferingAction::compute()
 	QgsVectorLayer* vectorLayer = dynamic_cast<QgsVectorLayer*>(lyr);
 	if (!vectorLayer)return  -1;
 	QString epsgId = vectorLayer->crs().authid();
+	QgsFields fields;
+	fields.append(QgsField("id", QVariant::Int, "integer", 10, 0));
 	QString lyrName =QString("%1_buffer").arg(lyr->name());
-	QgsVectorLayer* memLayer = qgsGeoUtils::createMemLayer(Qgis::WkbType::MultiPolygon, epsgId, lyrName, "name");
+
+	QgsVectorLayer* memLayer = QgsMemoryProviderUtils::createMemoryLayer(lyrName, fields, Qgis::WkbType::MultiPolygon, vectorLayer->crs());
+	 //= qgsGeoUtils::createMemLayer(Qgis::WkbType::MultiPolygon, epsgId, lyrName, "name");
+
 	if (!memLayer)return -1;
 	memLayer->startEditing();//Æô¶¯Í¼²ã±à¼­
 	int sCount = vectorLayer->selectedFeatures().count();
@@ -81,6 +87,7 @@ int qgsBufferingAction::compute()
 			else
 			{
 				QgsFeature feature;
+				QString wkt = outGeo.asWkt();
 				feature.setGeometry(outGeo);
 				feature.initAttributes(memLayer->fields().count());
 				feature.setValid(true);

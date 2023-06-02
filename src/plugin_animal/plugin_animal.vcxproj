@@ -14,6 +14,8 @@
     <QtRcc Include="resources\plugin_images.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\base\qgsTreeItem.cpp" />
+    <ClCompile Include="..\base\qgsTreeModel.cpp" />
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp" />
     <ClCompile Include="src\base\qgsribbonpluginuibase.cpp" />
     <ClCompile Include="src\plugin_exports.cpp" />
@@ -21,6 +23,8 @@
     <ClCompile Include="src\ui\buffer\qgsBufferingAction.cpp" />
     <ClCompile Include="src\ui\buffer\qgsBufferingDialog.cpp" />
     <ClCompile Include="src\ui\eval\qgsSamplingEvalAction.cpp" />
+    <ClCompile Include="src\ui\nalist\fauna\qgsFaunaListAction.cpp" />
+    <ClCompile Include="src\ui\nalist\fauna\qgsFaunaListDialog.cpp" />
     <ClCompile Include="src\ui\qgsAnimalPluginManager.cpp" />
     <ClCompile Include="src\ui\sampling\qgsAnimalSamplGridAction.cpp" />
     <ClCompile Include="src\ui\sampling\qgsSamplingParamDialog.cpp" />
@@ -40,6 +44,10 @@
     <QtMoc Include="src\ui\eval\qgsSamplingEvalAction.h" />
     <QtMoc Include="src\ui\buffer\qgsBufferingAction.h" />
     <QtMoc Include="src\ui\buffer\qgsBufferingDialog.h" />
+    <QtMoc Include="src\ui\nalist\fauna\qgsFaunaListAction.h" />
+    <ClInclude Include="..\base\qgsTreeItem.h" />
+    <QtMoc Include="..\base\qgsTreeModel.h" />
+    <ClInclude Include="src\ui\nalist\fauna\qgsFaunaListDialog.h" />
     <ClInclude Include="src\ui\qgsAnimalPluginManager.h" />
     <ClInclude Include="src\utils\qgsGridUtil.h" />
     <QtMoc Include="src\utils\qgsGeoUtils.h" />
@@ -48,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\ui\buffer\qgsBufferingDialogBase.ui" />
+    <QtUic Include="src\ui\nalist\fauna\qgsFaunaListDialogBase.ui" />
     <QtUic Include="src\ui\sampling\qgsSamplingParamDialog.ui" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -82,12 +91,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
-    <QtInstall>QT5</QtInstall>
+    <QtInstall>OSGeo_QT5</QtInstall>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugRel|x64'" Label="QtSettings">
     <QtModules>core;xml;sql;opengl;network;gui;svg;xmlpatterns;widgets;concurrent;networkauth</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
-    <QtInstall>QT5</QtInstall>
+    <QtInstall>OSGeo_QT5</QtInstall>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />

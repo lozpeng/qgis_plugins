@@ -25,6 +25,15 @@
     <Filter Include="ui\buffer">
       <UniqueIdentifier>{9ac93786-0b42-4c7e-9759-5a74e9693c1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ui\nalist">
+      <UniqueIdentifier>{bf0d8129-5ad0-4452-ad3e-40eb94ef7c0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\nalist\fauna">
+      <UniqueIdentifier>{7d202964-ed3c-4d38-a1c7-a2c01b98d6b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\nalist\flora">
+      <UniqueIdentifier>{dd1c58d8-4650-48a6-bec5-60839e7b0860}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base\QgsBaseActionFilter.cpp">
@@ -61,6 +70,18 @@
     <ClCompile Include="src\ui\buffer\qgsBufferingDialog.cpp">
       <Filter>ui\buffer</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\nalist\fauna\qgsFaunaListAction.cpp">
+      <Filter>ui\nalist\fauna</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\nalist\fauna\qgsFaunaListDialog.cpp">
+      <Filter>ui\nalist\fauna</Filter>
+    </ClCompile>
+    <ClCompile Include="..\base\qgsTreeItem.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\base\qgsTreeModel.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\base\QgsBaseActionFilter.h">
@@ -90,6 +111,12 @@
     <QtMoc Include="src\ui\buffer\qgsBufferingDialog.h">
       <Filter>ui\buffer</Filter>
     </QtMoc>
+    <QtMoc Include="src\ui\nalist\fauna\qgsFaunaListAction.h">
+      <Filter>ui\nalist\fauna</Filter>
+    </QtMoc>
+    <QtMoc Include="..\base\qgsTreeModel.h">
+      <Filter>base</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ui\qgsAnimalPluginManager.h">
@@ -98,6 +125,12 @@
     <ClInclude Include="src\utils\qgsGridUtil.h">
       <Filter>utils</Filter>
     </ClInclude>
+    <ClInclude Include="src\ui\nalist\fauna\qgsFaunaListDialog.h">
+      <Filter>ui\nalist\fauna</Filter>
+    </ClInclude>
+    <ClInclude Include="..\base\qgsTreeItem.h">
+      <Filter>base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="src\ui\sampling\qgsSamplingParamDialog.ui">
@@ -105,6 +138,9 @@
     </QtUic>
     <QtUic Include="src\ui\buffer\qgsBufferingDialogBase.ui">
       <Filter>ui\buffer</Filter>
+    </QtUic>
+    <QtUic Include="src\ui\nalist\fauna\qgsFaunaListDialogBase.ui">
+      <Filter>ui\nalist\fauna</Filter>
     </QtUic>
   </ItemGroup>
 </Project>
